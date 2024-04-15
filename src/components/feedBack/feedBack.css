@@ -1,0 +1,7 @@
+.feed-back {
+   position: relative;
+   margin-top: 281px;
+   display: grid;
+   justify-content: center;
+   grid-template-columns: 510px 468px;
+}

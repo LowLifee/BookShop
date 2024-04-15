@@ -1,0 +1,19 @@
+.header {
+   position: relative;
+   top: 44px;
+   border: 1px solid rgb(216, 216, 89);
+   border-radius: 15px;
+   width: 1442px;
+   height: 132px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: #777777;
+}
+
+.header h1 {
+   font-weight: 400;
+   font-size: 96px;
+   line-height: 116.18px;
+   color: #f0f0f0;
+}

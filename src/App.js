@@ -1,24 +1,42 @@
-import logo from './logo.svg';
+import { createContext, useState } from 'react';
+
+import Header from './components/header/Header';
+import FeedBack from './components/feedBack/FeedBack';
+import Form from './components/form/Form';
+import Items from './components/items/Items';
+import Modal from './components/modal/Modal';
+
 import './App.css';
 
+export const Orders = createContext('');
+
 function App() {
+  const [data, setData] = useState({ cart: [], phoneNumber: '' });
+  const [popupActive, setPopup] = useState(false);
+  const [product, setProduct] = useState({});
+
+  const popupToggle = () => {
+    setPopup(status => !status);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Orders.Provider value={{
+      data,
+      setData,
+      popupActive,
+      popupToggle,
+      product,
+      setProduct
+    }}>
+      <div className="App">
+        <Header />
+        <FeedBack />
+        <Form />
+        <Items />
+        <Modal />
+      </div>
+
+    </Orders.Provider>
   );
 }
 

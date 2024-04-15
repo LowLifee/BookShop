@@ -1,0 +1,8 @@
+.item-wrapper ul {
+   list-style: none;
+   position: relative;
+   display: grid;
+   grid-template-columns: repeat(3, 301px);
+   column-gap: 50px;
+   row-gap: 60px;
+}
